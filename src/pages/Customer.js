@@ -22,6 +22,8 @@ export default function Customer() {
                   })
        }, []);
 
+
+//how to make a delete button by using onClick and making a fetch call with the method DELETE
  return(
    <> 
          {notFound ? <NotFound /> : null}
@@ -32,6 +34,27 @@ export default function Customer() {
                         <p>{customer.industry}</p>
                      </div> 
                             : <p>wtf</p>}
+                       
+          <button
+                  onClick={(e) => {
+                     const url = baseURL + 'api/customers/' + id;
+                    fetch(url, {method: 'DELETE', headers: {
+                       'Content-Type': 'application/json'
+                    }}) 
+                    .then((response) => {
+                      if(!response.ok){
+                        throw new Error ('Something went wrong')
+                      }
+                      navigate('/customers');
+                    })
+                    .catch((e) => {
+                        console.log(e);         
+                    });
+             }}
+       > Delete
+       </button>
+
+             <br />
 
       <Link to="/customers">Go back</Link>
       

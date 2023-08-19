@@ -8,7 +8,7 @@ export default function Customers() {
    const [customers, setCustomers] = useState();
       useEffect(() => {
          fetch(baseURL + '/api/customers/')
-         .then((response ) => response.json())
+         .then((response) => response.json())
          .then((data) => {
             console.log(data.customers);
             setCustomers(data.customers);
@@ -18,6 +18,7 @@ export default function Customers() {
       return (
          <>
              <h1>Here are our customers:</h1>
+         <ul>
              {customers ? customers.map((customer) => {
                        return (
                            <div className="m-2" key={customer.id}>
@@ -30,6 +31,7 @@ export default function Customers() {
                        );
                    })
                  : null}
+         </ul>
          </>
      );
  }
