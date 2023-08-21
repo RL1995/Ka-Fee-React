@@ -8,7 +8,8 @@ export default function Customer() {
     const [customer, setCustomer] = useState();
     const [notFound, setNotFound] = useState();
     const {id} = useParams();
-       useEffect(() => {
+
+useEffect(() => {
           const url = baseURL + '/api/customers/' + id;
             fetch(url)
                   .then((response) => {
@@ -20,11 +21,11 @@ export default function Customer() {
                   .then ((data) =>{
                      setCustomer(data.customer);
                   })
-       }, []);
+}, []);
 
 
 //how to make a delete button by using onClick and making a fetch call with the method DELETE
- return(
+return(
    <> 
          {notFound ? <NotFound /> : null}
 
@@ -53,11 +54,8 @@ export default function Customer() {
              }}
        > Delete
        </button>
-
-             <br />
-
+         <br />
       <Link to="/customers">Go back</Link>
-      
    </>
-   );
+);
 }
