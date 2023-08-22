@@ -8,7 +8,7 @@ export default function AddCustomer(props) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+   //
   return (
     <>
       <button onClick={props.toggleshow} className="bg-purple-600 block mx-auto hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
