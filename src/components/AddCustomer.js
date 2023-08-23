@@ -8,12 +8,12 @@ export default function AddCustomer(props) {
 
   return (
     <>
-      <button onClick={props.toggleshow} className="bg-purple-600 block mx-auto hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+      <button onClick={props.toggleShow} className="bg-purple-600 block mx-auto hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
           >+ Add Customer</button>
-       
+
       <Modal
         show={props.show}
-        onHide={props.toggleshow}
+        onHide={props.toggleShow}
         backdrop="static"
         keyboard={false}
       >
@@ -25,7 +25,6 @@ export default function AddCustomer(props) {
 
         <Modal.Body>
         <form onSubmit= {(e) => {
-           e.preventDefault();
            setName('');
            setIndustry('');
            props.newCustomer(name ,industry); 
@@ -79,11 +78,11 @@ export default function AddCustomer(props) {
 
             <Modal.Footer>
               <button className="bg-slate-400 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded" 
-                  onClick={props.toggleshow}>Close
+                  onClick={props.toggleShow}>Close
               </button>
 
               <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" 
-                  onClick={props.toggleshow}
+                  onClick={props.toggleShow}
                   form="editmodal">Add
               </button>
             </Modal.Footer>

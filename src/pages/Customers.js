@@ -7,7 +7,7 @@ import AddCustomer from '../components/AddCustomer';
 
 export default function Customers() {  
    const [customers, setCustomers] = useState();
-   const [show, setShow] = useState(true);
+   const [show, setShow] = useState(false);
 
 
 
