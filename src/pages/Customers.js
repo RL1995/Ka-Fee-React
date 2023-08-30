@@ -10,7 +10,6 @@ export default function Customers() {
    const [show, setShow] = useState(false);
 
 
-
 function toggleShow(){
     setShow(!show);
 
